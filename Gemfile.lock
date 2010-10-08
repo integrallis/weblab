@@ -60,7 +60,11 @@ GEM
       rake (>= 0.8.7)
     gherkin (2.1.5)
       trollop (~> 1.16.2)
+    has_scope (0.5.0)
     i18n (0.4.1)
+    inherited_resources (1.1.2)
+      has_scope (~> 0.5.0)
+      responders (~> 0.6.0)
     json_pure (1.4.6)
     launchy (0.3.7)
       configuration (>= 0.0.5)
@@ -93,6 +97,7 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
+    responders (0.6.2)
     rspec (2.0.0.beta.22)
       rspec-core (= 2.0.0.beta.22)
       rspec-expectations (= 2.0.0.beta.22)
@@ -130,6 +135,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   factory_girl_rails (= 1.0)
+  inherited_resources (= 1.1.2)
   launchy
   mocha
   rails (= 3.0.0)

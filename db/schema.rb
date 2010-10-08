@@ -10,6 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20100922034804) do
+
+  create_table "snippets", :force => true do |t|
+    t.string   "title"
+    t.text     "code",       :default => "log.info( 'JavaScript did this!' );"
+    t.text     "markup"
+    t.text     "css"
+    t.boolean  "visual",     :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

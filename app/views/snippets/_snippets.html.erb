@@ -1,0 +1,8 @@
+<h4>Snippets</h4>
+<ul id="snippet_table">
+	<% @snippets.each do |snippet| %>
+	<li id="snippet_<%= snippet.id %>">
+	    <%= link_to "#{snippet.title}", edit_snippet_path(snippet), :remote => true %>
+	</li>
+	<% end %>
+</ul>

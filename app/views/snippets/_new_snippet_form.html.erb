@@ -1,0 +1,6 @@
+<%= form_for(Snippet.new, :remote => true) do |f| %>
+	<fieldset class="ui-helper-reset">
+		<label for="new_snippet_title">Title</label>
+		<%= f.text_field :title, :class => "ui-widget-content ui-corner-all" %>
+	</fieldset>
+<% end %>

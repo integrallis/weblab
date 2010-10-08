@@ -1,14 +1,9 @@
-# Welcome to weblab
+# Welcome to WebLab
 
 ## Summary
 
-weblab is a .... TODO high level summary of app
+WebLab is a simple JavaScript/JQuery snippet lab
 
 ## Getting Started
 
     gem install bundler
-    # TODO other setup commands here
-    
-## Seed Data
-
-Login as ....  # TODO insert typical test accounts for QA / devs to login to app as

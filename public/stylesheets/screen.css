@@ -1,5 +1,5 @@
 /*========================================================
-	RESET HERE
+	CSS RESET
 ========================================================*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -21,4 +21,186 @@ ins {text-decoration: none;}
 del {text-decoration: line-through;}
 /* tables still need 'cellspacing="0"' in the markup */
 table {border-collapse: collapse; border-spacing: 0;}
+
+/*========================================================
+	CODE
+========================================================*/
+
+code {
+	font-family: courier, monospace;
+	font-size: 90%;
+	color: #144;
+}
+
+pre.code {
+	margin: 1.1em 12px;
+	border: 1px solid #CCCCCC;
+	color: black;
+	padding: .4em;
+	font-family: courier, monospace;
+}
+
+.CodeMirror-line-numbers {
+	width: 2.2em;
+	color: #aaa;
+	background-color: #eee;
+	text-align: right;
+	padding-right: .3em;
+	font-size: 10pt;
+	font-family: monospace;
+	padding-top: .4em;
+}
+
+.code_area { 
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	height: 300px; 
+	width: 100%;
+/*	border: 10px solid #ddd; 
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px; */
+}
+
+/*========================================================
+	MAIN
+========================================================*/
+body {
+	background: #fff;  /*#cbcfb5;*/
+	color: #333;
+	font-family: 'Cantarell', arial, serif;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+header {
+	height: 90px; /*Height of top section*/
+}
+
+header h1 {
+	color: #ddd;
+	font-size: 48px;
+	line-height: 76px;
+	letter-spacing: -2px;
+	font-weight: bold; 
+	font-family: 'Cuprum', arial, serif;
+}
+
+#main {
+	/*background: #362c20 url(/images/blackboard.jpg) top left repeat;*/
+	width: 840px; /*Width of main container*/
+	margin: 0 auto; /*Center container on page*/
+	max-height: 700px;
+}
+
+#wrapper {
+	float: left;
+	width: 100%;
+}
+
+#center {
+	margin-left: 200px; /*Set left margin to LeftColumnWidth*/
+}
+
+#left {
+	float: left;
+	width: 200px; /*Width of left column*/
+	margin-left: -840px; /*Set left margin to -(MainContainerWidth)*/
+}
+
+#footer {
+	clear: left;
+	width: 100%;
+	text-align: center;
+	padding: 4px 0;
+	font-family: 'Reenie Beanie', arial, serif;
+	font-size: 20px;
+}
+
+.padding {
+	margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+	margin-top: 0;
+}
+
+/*form label {
+	color: #666666;*/
+/*	font-family: 'Lobster', arial, serif;*/
+/*	font-size: 13px;
+	font-weight: normal;
+	line-height: 1em;
+	margin-right: 0pt;
+	margin-bottom: 0pt;
+	margin-left: 0pt;
+	padding-top: 10pt;
+	padding-right: 0pt;
+	padding-bottom: 10px;
+	padding-left: 0pt;
+}*/
+
+/*========================================================
+	FORMS
+========================================================*/
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+label, input { display:block; }
+
+/*========================================================
+	ADD SNIPPET DIALOG
+========================================================*/
+
+#add_snippet_dialog label, #dialog input { display:block; }
+#add_snippet_dialog label { margin-top: 0.5em; }
+#add_snippet_dialog input { width: 95%; }
+
+/*========================================================
+	SNIPPETS LIST
+========================================================*/
+
+.snippets-nav, .snippets-nav ul, .snippets-nav li {
+	margin: 0;
+	padding: 0
+}
+
+.snippets-nav {
+	float: left;
+	width: 170px;
+	font-size: 1.3em;
+}
+
+.snippets-nav dt,
+.snippets-nav h4 {
+	margin-top: 1.5em;
+	margin-bottom: 0;
+	padding-left: 8px;
+	padding-bottom:5px;
+	line-height: 1.2em;
+	border-bottom: 1px solid #F4F4F4;
+}
+
+.snippets-nav li a {
+	border-bottom: 1px solid #F4F4F4;
+	display:block;
+	padding: 4px 3px 4px 8px;
+	font-size: 90%;
+	text-decoration: none;
+	color: #555 ;
+	margin:2px 0;
+	height:13px;
+}
+
+.snippets-nav li a:hover,
+.snippets-nav li a:focus,
+.snippets-nav li a:hover,
+.snippets-nav li a:focus {
+	background: #f3f3f3;
+	color:#000;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+.snippets-nav li a.selected {
+	background: #555;
+	color:#ffffff;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+
 

@@ -1,0 +1,52 @@
+<%= form_for(@snippet, :remote => true) do |f| %>
+	<% if @snippet.errors.any? %>
+		<div id="error_explanation">
+		  <h2><%= pluralize(@snippet.errors.count, "error") %> prohibited this snippet from being saved:</h2>
+		  <ul>
+		  <% @snippet.errors.full_messages.each do |msg| %>
+		    	<li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	<% end %>
+	
+	<div class="field">
+		<%= f.text_field :title, :class => "text ui-widget-content ui-corner-all" %>
+	</div>
+	
+	<div id="tabs">
+		<ul>
+			<li><a href="#code">Code</a></li>
+			<li><a href="#markup">Markup</a></li>
+			<li><a href="#css">CSS</a></li>
+		</ul>
+
+		<div id="code">
+			<div class="field">
+            	<%= f.text_area :code, :class => "code_area" %>
+			</div>
+		</div>
+		<div id="markup">
+			<div class="field">
+				<%= f.text_area :markup, :class => "code_area" %>
+			</div>
+		</div>
+		<div id="css">
+			<div class="field">
+			  <%= f.text_area :css, :class => "code_area" %>
+			</div>
+		</div>		
+	</div><!-- tabs -->
+	
+	<div class="field">
+		<%= f.label :visual %><br />
+		<%= f.check_box :visual %>
+	</div>
+<% end %><!-- form -->
+
+<span id="buttons">
+	<button id="run_snippet">Run Snippet</button>
+	<button id="toggle_console">Show/Hide Console</button>
+	<button id="clear_all">Clear</button>
+	<button id="save_snippet">Save Changes</button>
+</span>

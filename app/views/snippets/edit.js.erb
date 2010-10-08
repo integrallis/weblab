@@ -1,0 +1,9 @@
+$("#snippet_form").html("<%= escape_javascript(render(:partial => "edit_snippet_form"))%>");
+set_code_areas();
+set_buttons();
+enable_tabs();
+run_snippet();
+save_snippet();
+toggle_console();
+clear_all();
+log.info("in edit.js.erb");

@@ -1,0 +1,24 @@
+<div id="wrapper">
+	<div id="center">
+		<div class="padding">
+			<button id="add_snippet">Add Snippet</button>
+			<div id="snippet_form">
+                <%= render(:partial => 'edit_snippet_form') if @snippet %>
+            </div>
+		</div>
+	</div>
+</div>
+
+<div id="left">
+	<div class="padding">
+		<div id="snippets" class="snippets-nav">
+			<%= render(:partial => 'snippets') if @snippets %>
+		</div>
+	</div>
+</div>
+
+<iframe id="script_result" frameborder="1" width="100%" scrolling="no"><p>You need frame support to run this application</p></iframe>
+
+<div id="add_snippet_dialog" title="New Snippet">
+	<%= render(:partial => 'new_snippet_form') %>
+</div>
