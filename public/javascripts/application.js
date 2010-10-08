@@ -56,15 +56,6 @@ function preview_dialog() {
 		title: 'Weblab Preview'
 	});
 }
-function set_data_table() {
-	$('#snippet_table').dataTable({
-		// "bJQueryUI": true,
-		"bLengthChange": false,
-		"bPaginate": false,
-		"bInfo": false,
-		"bAutoWidth": false
-	});
-}
 function new_snippet() {
 	var $new_snippet_dialog = $('#add_snippet_dialog').dialog({
 		autoOpen: false,
@@ -99,9 +90,6 @@ function new_snippet() {
 	});
 	
 	function add_snippet() {
-		
-		// ajax call to create the new snippet
-		// if successful update the #snippet_table, add some animation
 		var title = $('#snippet_title').val();
 		log.info("AJAX adding a snippet with title " + title);
 		var new_snippet_form = $('#new_snippet');
@@ -209,26 +197,14 @@ $(document).ready(function() {
 	// hide snippet dialog
 	hide_snippet_dialog();
 	
-	// set code areas
-    //set_code_areas();
-	
 	// set all buttons
     set_buttons();
-
-    // enable tabs
-	//enable_tabs();
 	
 	// preview dialog
     preview_dialog();
 	
-	// snippet list data table
-    set_data_table();
-	
 	// sets new snippet functionality
     new_snippet();
-	
-	// run snippet
-	//run_snippet();
 	
 	// toggle console
 	toggle_console();
