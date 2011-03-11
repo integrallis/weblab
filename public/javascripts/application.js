@@ -1,11 +1,39 @@
-// var SNIPPETS = (function() {
-// 	var module = {};
-// 	
-// 	module.set_code_areas() {
-// 		
-// 	}
-// 	
-// }());
+var SNIPPETS = (function() {
+	var module = {};
+	
+	var js_editor;
+	
+	module.set_code_areas == function() {
+		try {
+			js_editor = CodeMirror.fromTextArea('snippet_code', {
+			    height: "350px",
+			    parserfile: ["tokenizejavascript.js", "parsejavascript.js"],
+				stylesheet: "/stylesheets/codemirror/jscolors.css",
+				path: "/javascripts/",
+				autoMatchParens: true
+			});
+
+			markup_editor = CodeMirror.fromTextArea('snippet_markup', {
+			    height: "350px",
+			    parserfile: "parsexml.js",
+			    stylesheet: "/stylesheets/codemirror/xmlcolors.css",
+				path: "/javascripts/",
+				autoMatchParens: true
+			});
+
+			css_editor = CodeMirror.fromTextArea('snippet_css', {
+			    height: "350px",
+				parserfile: "parsecss.js",
+			    stylesheet: "/stylesheets/codemirror/csscolors.css",
+				path: "/javascripts/",
+				autoMatchParens: true
+			});
+		} catch (error) {
+			log.error('puppy pants!');
+		}
+	}
+	return module;
+}());
 
 var js_editor;
 var markup_editor;
@@ -120,13 +148,22 @@ function run_snippet() {
 		var iframe_document = $("iframe#script_result")[0].contentWindow.document;
 		
 		// grab the snippet javascript code
-		var script_text = js_editor.getCode(); //$("#snippet_code").val();
+		var script_text = js_editor.getCode();
 		
 		// grab the snippet html
-		var markup = markup_editor.getCode(); // $("#snippet_markup").val();
-		var css = css_editor.getCode(); //$("#snippet_css").val();
+		var markup = markup_editor.getCode();
 		
-		//log.info("Markup ==>" + markup);
+		// grab the snippet css
+		var css = css_editor.getCode();
+		
+		var example = '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8" \/>\n<title>Smashing HTML5!<\/title>\n\n<link rel="stylesheet" href="css\/main.css" type="text\/css" \/>\n\n<!--[if IE]>\n	<script src="http:\/\/html5shiv.googlecode.com\/svn\/trunk\/html5.js"><\/script><![endif]-->\n<style>\n<\/style>\n<\/head>\n\n<body id="index" class="home">\n   <h1>Hi, there!<\/h1>\n<\/body>\n<\/html>';
+		
+		var jQueryDoc = $(markup);
+		//var cssTag = "<style type=\"text/css\" charset=\"utf-8\">\n" + css + "\n</style>";
+		//jQueryDoc("head"); //.append(cssTag);
+		
+		//log.info('CSS ==> ' + cssTag);
+		//log.info('DOCUMENT ==> ' + jQueryDoc.outerHTML());
 		
 		// render the html to the iframe
 		iframe_document.open();
@@ -194,6 +231,9 @@ function hide_snippet_dialog() {
 }
 
 $(document).ready(function() {
+    // jquery ui theme switcher
+    $('#switcher').themeswitcher();
+
 	// hide snippet dialog
 	hide_snippet_dialog();
 	
